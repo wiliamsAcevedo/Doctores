@@ -1,0 +1,66 @@
+﻿@model DOCTORESPAGINA.Models.Doctores
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Doctores</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Especialidades.NombreEsp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Especialidades.NombreEsp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hospitales.NombreHosp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hospitales.NombreHosp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreDoc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreDoc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstadoDoc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstadoDoc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaCreacionDoc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaCreacionDoc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DoctoresID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

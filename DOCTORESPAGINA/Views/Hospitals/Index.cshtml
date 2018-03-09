@@ -1,0 +1,48 @@
+﻿@model IEnumerable<DOCTORESPAGINA.Models.Hospital>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="table-responsive">
+    <table class="table-bordered table-condensed table-hover table-striped table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreHosp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaCreacionHos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstadoHosp)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreHosp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaCreacionHos)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EstadoHosp)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.HospitalID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.HospitalID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.HospitalID })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
