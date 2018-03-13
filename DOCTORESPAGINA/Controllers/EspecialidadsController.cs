@@ -13,7 +13,12 @@ namespace DOCTORESPAGINA.Controllers
     public class EspecialidadsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-
+        // GET: Especialidads
+        [Authorize(Roles = "Usuario")]
+        public ActionResult VistaEspecialidades()
+        {
+            return View(db.Especialidads.ToList());
+        }
         // GET: Especialidads
         public ActionResult Index()
         {

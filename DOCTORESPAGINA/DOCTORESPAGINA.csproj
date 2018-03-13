@@ -288,6 +288,9 @@
     <Content Include="Views\Doctores\Details.cshtml" />
     <Content Include="Views\Doctores\Edit.cshtml" />
     <Content Include="Views\Doctores\Index.cshtml" />
+    <Content Include="Views\Doctores\VistaDoctores.cshtml" />
+    <Content Include="Views\Especialidads\VistaEspecialidades.cshtml" />
+    <Content Include="Views\Hospitals\VistaHospitales.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

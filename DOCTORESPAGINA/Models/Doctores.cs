@@ -30,7 +30,7 @@ namespace DOCTORESPAGINA.Models
         [Required]
         [Display(Name = "Estado activo o inactivo")]
         public int EstadoDoc { get; set; }
-
+        [Display(Name = "Fecha de la creacion del doctor")]
         public DateTime FechaCreacionDoc { get; set; }
 
         public virtual Especialidad Especialidades { get; set; }

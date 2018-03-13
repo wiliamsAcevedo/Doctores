@@ -15,6 +15,13 @@ namespace DOCTORESPAGINA.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Hospitals
+
+        
+        public ActionResult VistaHospitales()
+        {
+            return View(db.Hospitals.ToList());
+        }
+        // GET: Hospitals
         public ActionResult Index()
         {
             return View(db.Hospitals.ToList());
@@ -35,12 +42,13 @@ namespace DOCTORESPAGINA.Controllers
             return View(hospital);
         }
 
+        [Authorize(Roles = "Administrador")]
         // GET: Hospitals/Create
         public ActionResult Create()
         {
             return View();
         }
-
+        [Authorize(Roles = "Administrador")]
         // POST: Hospitals/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -59,6 +67,7 @@ namespace DOCTORESPAGINA.Controllers
         }
 
         // GET: Hospitals/Edit/5
+        [Authorize(Roles = "Administrador")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -76,6 +85,7 @@ namespace DOCTORESPAGINA.Controllers
         // POST: Hospitals/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Administrador")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "HospitalID,NombreHosp,EstadoHosp")] Hospital hospital)
@@ -90,6 +100,7 @@ namespace DOCTORESPAGINA.Controllers
         }
 
         // GET: Hospitals/Delete/5
+        [Authorize(Roles = "Administrador")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -105,6 +116,7 @@ namespace DOCTORESPAGINA.Controllers
         }
 
         // POST: Hospitals/Delete/5
+        [Authorize(Roles = "Administrador")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

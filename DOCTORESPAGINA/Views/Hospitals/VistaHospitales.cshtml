@@ -1,0 +1,44 @@
+﻿@model IEnumerable<DOCTORESPAGINA.Models.Hospital>
+
+@{
+    ViewBag.Title = "VistaHospitales";
+}
+
+<h2>Hospitales</h2>
+
+<div class="table-responsive">
+    <table class="table-bordered table-condensed table-hover table-striped table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreHosp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaCreacionHos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstadoHosp)
+            </th>
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreHosp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaCreacionHos)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EstadoHosp)
+                </td>
+
+            </tr>
+        }
+
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Regresar", "Index", "Home")
+</p>

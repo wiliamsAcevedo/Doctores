@@ -1,0 +1,64 @@
+﻿@model IEnumerable<DOCTORESPAGINA.Models.Doctores>
+
+@{
+    ViewBag.Title = "VistaDoctores";
+}
+
+<h2>Doctores</h2>
+
+
+<div class="table-responsive">
+    <table class="table-bordered table-condensed table-hover table-striped table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Especialidades.NombreEsp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hospitales.NombreHosp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreDoc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstadoDoc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaCreacionDoc)
+            </th>
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Especialidades.NombreEsp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hospitales.NombreHosp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreDoc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EstadoDoc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaCreacionDoc)
+                </td>
+
+            </tr>
+        }
+
+    </table>
+   
+</div>
+<p>
+    @Html.ActionLink("Regresar", "Index", "Home")
+</p>

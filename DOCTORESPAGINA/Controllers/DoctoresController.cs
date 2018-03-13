@@ -13,7 +13,13 @@ namespace DOCTORESPAGINA.Controllers
     public class DoctoresController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-
+        // GET: Doctores
+        
+        public ActionResult VistaDoctores()
+        {
+            var doctores = db.Doctores.Include(d => d.Especialidades).Include(d => d.Hospitales);
+            return View(doctores.ToList());
+        }
         // GET: Doctores
         public ActionResult Index()
         {
